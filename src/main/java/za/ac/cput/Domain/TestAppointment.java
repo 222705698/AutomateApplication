@@ -108,6 +108,16 @@ public class TestAppointment {
             this.testVenue = testVenue;
             return this;
         }
+        public TestAppointment.Builder copy(Builder builder) {
+            this.testID = builder.testID;
+            this.testAddress = builder.testAddress;
+            this.testVenue = builder.testVenue;
+            this.testDate = builder.testDate;
+            this.testResult = builder.testResult;
+            this.licenceCode = builder.licenceCode;
+            this.testAmount = builder.testAmount;
+            return this;
+        }
         public TestAppointment build() {
             return new TestAppointment(this);
 

@@ -52,6 +52,12 @@ public class DrivingTest extends TestAppointment {
             this.test = test;
             return this;
         }
+        public DrivingTest.Builder copy(Builder builder) {
+            this.driverLicenseID = builder.driverLicenseID;
+            this.examiner = builder.examiner;
+            this.test = builder.test;
+            return this;
+        }
 
         public DrivingTest build() {
             return new DrivingTest(this);
