@@ -43,7 +43,7 @@ class VehicleDiscRepositoryTest {
     @Test
     @Disabled
     void d_delete() {
-        assertFalse(repository.delete(vehicleDisc.getVehicleDiscID()));
+        assertTrue(repository.delete(vehicleDisc.getVehicleDiscID()));
         System.out.println("sucessuly deleted a Vehicle");
     }
 
