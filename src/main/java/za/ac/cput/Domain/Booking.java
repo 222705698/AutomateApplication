@@ -61,6 +61,16 @@ public class Booking {
         public Booking build(){
             return new Booking(this);
         }
+
+        public Booking.BookBuilder copy(Booking booking) {
+            this.bookingID = booking.bookingID;
+            this.bookingType = booking.bookingType;
+            this.bookingDate = booking.bookingDate;
+            this.bookingAmount = booking.bookingAmount;
+            this.bookingDescription = booking.bookingDescription;
+            this.bookingStatus = booking.bookingStatus;
+            return this;
+        }
     }
 
     public String getBookingID() {
