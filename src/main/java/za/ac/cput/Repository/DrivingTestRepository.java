@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DrivingTestRepository implements IDrivingTestRepository {
-    private static IDrivingTestRepository repository = null;
+    private static DrivingTestRepository repository = null;
     private List<DrivingTest> DrivingTestList;
 
     private DrivingTestRepository() {DrivingTestList = new ArrayList<DrivingTest>();}
 
-    public static IDrivingTestRepository getIRepository() {
+    public static DrivingTestRepository getIRepository() {
         if (repository == null) {
             repository = new DrivingTestRepository();
         }
@@ -30,7 +30,7 @@ public class DrivingTestRepository implements IDrivingTestRepository {
     public DrivingTest read(String driverLicenseID) {
         for (DrivingTest drivingTest : DrivingTestList) {
             if (drivingTest.getDriverLicenseID().equals(drivingTest.getDriverLicenseID())) {
-                DrivingTestList.set(1, drivingTest);
+                return drivingTest;
             }
 
         }
@@ -42,6 +42,7 @@ public class DrivingTestRepository implements IDrivingTestRepository {
     public DrivingTest update(DrivingTest drivingTest) {
         for (int i = 0; i <DrivingTestList.size(); i++) {
             DrivingTestList.set(i, drivingTest);
+            return drivingTest;
         }
         System.out.println("DrivingTestRepository updated");
         return null;
