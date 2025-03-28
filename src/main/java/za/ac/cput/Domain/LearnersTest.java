@@ -1,5 +1,5 @@
 package za.ac.cput.Domain;
-
+//Sinokholo Singazi 222705698
 public class LearnersTest extends TestAppointment {
     private String learnersTestID;
     private String testScore;
