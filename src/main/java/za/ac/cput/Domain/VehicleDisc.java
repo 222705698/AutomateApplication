@@ -68,6 +68,13 @@ public class VehicleDisc {
             this.issueDate = issueDate;
             return this;
         }
+        public DiscBuilder copy(VehicleDisc vehicleDisc) {
+            this.VehicleDiscID = vehicleDisc.getVehicleDiscID();
+            this.expiryDate = vehicleDisc.getExpiryDate();
+            this.status = vehicleDisc.getStatus();
+            this.issueDate = vehicleDisc.getIssueDate();
+            return this;
+        }
 
         public VehicleDisc build() {
             return new VehicleDisc(this);
