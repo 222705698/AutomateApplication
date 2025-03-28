@@ -1,5 +1,5 @@
 package za.ac.cput.Domain;
-
+//Sinokholo Singazi 222705698
 public class DrivingTest extends TestAppointment {
     private String driverLicenseID;
     private String examiner;
