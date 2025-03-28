@@ -60,6 +60,16 @@ public class Payments {
         public Payments build() {
             return new Payments(this);
         }
+
+        public Payments.PaymentBuilder copy(Payments payments) {
+            this.paymentID = payments.paymentID;
+            this.paymentType = payments.paymentType;
+            this.paymentDate = payments.paymentDate;
+            this.paymentMethod = payments.paymentMethod;
+            this.paymentAmount = payments.paymentAmount;
+            this.paymentDescription = payments.paymentDescription;
+            return this;
+        }
     }
 
     public String getPaymentID() {
