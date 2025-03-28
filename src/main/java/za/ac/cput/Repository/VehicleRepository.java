@@ -60,9 +60,9 @@ public class VehicleRepository implements IVehicleRepository {
     @Override
     public boolean delete(String vehicleId) {
         Vehicle vehicleToDelete = read(vehicleId);  // Find the vehicle
-        if (vehicleToDelete == null) {
+        if (vehicleToDelete == null)
             return false;  // Return false if the vehicle is not found
-        }
+
         return (vehiclesList.remove(vehicleToDelete));  // Remove and return the result
     }
 
