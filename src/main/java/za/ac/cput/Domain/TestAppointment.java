@@ -13,7 +13,7 @@ public class TestAppointment {
 
     public TestAppointment() {
     }
-    private TestAppointment(Builder builder) {
+    public TestAppointment(Builder builder) {
         this.testID = builder.testID;
         this.testAddress = builder.testAddress;
         this.testVenue = builder.testVenue;
