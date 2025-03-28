@@ -1,7 +1,7 @@
 package za.ac.cput.Domain;
 
 import java.time.LocalDate;
-
+//Sinokholo Singazi 222705698
 public class TestAppointment {
     private String testID;
     private String testAddress;
