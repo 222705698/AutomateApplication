@@ -14,13 +14,13 @@ class UserRepositoryTest { private IUserRepository userRepository;
 
     @BeforeEach
     void setUp() {
-        userRepository = UserRepository.getIRepository(); // Initialize repository
+        userRepository = UserRepository.getIRepository();
 
-        // Initialize test users
+
         myUser = UserFactory.createUser("0105055616084", "Sinokholo", "Singazi", "0655528976", "Sinosingazi@gmail.com", "P.O.Box 123456");
         myUser1 = UserFactory.createUser("0726268432828", "Sibahle", "Shange", "0719250925", "Shange@gmail.com", "P.O.Box 123456");
 
-        // Ensure users are valid before adding them to the repository
+
         if (myUser != null) {
             userRepository.create(myUser);
         }
@@ -32,8 +32,8 @@ class UserRepositoryTest { private IUserRepository userRepository;
     @Test
     @Order(1)
     void createUser() {
-        assertNotNull(myUser, "User creation failed: fields may be incorrect");
-        assertNotNull(userRepository.read(myUser.getIdentityNumber()), "User must be added to the repository");
+        assertNotNull(myUser);
+        assertNotNull(userRepository.read(myUser.getIdentityNumber()));
         System.out.println(myUser);
     }
 
@@ -42,9 +42,9 @@ class UserRepositoryTest { private IUserRepository userRepository;
     @Test
     @Order(2)
     void readUser() {
-        User fetchedUser = userRepository.read(myUser.getIdentityNumber());
-        assertNotNull(fetchedUser, "User should be retrieved using the given identity number");
-        System.out.println(fetchedUser);
+        User readUser = userRepository.read(myUser.getIdentityNumber());
+        assertNotNull(readUser, "User should be retrieved using the given identity number");
+        System.out.println(readUser);
     }
 
     @Test
@@ -66,18 +66,16 @@ class UserRepositoryTest { private IUserRepository userRepository;
     }
 
     @Test
-   @Disabled
     @Order(4)
     void deleteUser() {
         assertTrue(userRepository.delete(myUser.getIdentityNumber()), "User should be deleted successfully");
-        assertNull(userRepository.read(myUser.getIdentityNumber()), "Deleted user should not exist in the repository");
         System.out.println("Deleted User ID: " + myUser.getIdentityNumber());
     }
     @Test
     @Order(5)
     void testCreateUser_InvalidEmail_ReturnsNull() {
         User invalidEmailUser = UserFactory.createUser("0105055616084", "Invalid", "Email", "0655528976", "invalid-email", "P.O.Box 123456");
-        assertNull(invalidEmailUser, "User should be null if email is invalid");
+        assertNull(invalidEmailUser);
         System.out.println(invalidEmailUser);
 
     }

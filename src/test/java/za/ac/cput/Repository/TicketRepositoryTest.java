@@ -15,13 +15,13 @@ public class TicketRepositoryTest {
 
     @BeforeEach
     void setUp() {
-        ticketRepository = TicketRepository.getRepository(); // Ensure repository is initialized
+        ticketRepository = TicketRepository.getRepository();
 
         myTicket = TicketFactory.CreateTicketFactory("1000", "2020-01-01", "Pending");
         myTicket1 = TicketFactory.CreateTicketFactory("", "2020-01-01", "Pending");
 
         if (myTicket != null && ticketRepository.read(myTicket.getTicketID()) == null) {
-            ticketRepository.create(myTicket); // Add to repository only if not already present
+            ticketRepository.create(myTicket);
         }
     }
 
@@ -37,8 +37,8 @@ public class TicketRepositoryTest {
     @Order(2)
     public void read() {
         Tickect readTicket = ticketRepository.read(myTicket.getTicketID());
-        assertNotNull(readTicket, "Ticket should be fetched successfully");
-        assertEquals(myTicket.getTicketID(), readTicket.getTicketID(), "Ticket ID should match");
+        assertNotNull(readTicket);
+        assertEquals(myTicket.getTicketID(), readTicket.getTicketID());
         System.out.println("Fetched Ticket: " + readTicket);
     }
 
