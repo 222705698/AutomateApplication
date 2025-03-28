@@ -42,9 +42,9 @@ class LicenseRepositoryTest {
     @Test
     @Order(2)
     void readLicense() {
-        License fetchedLicense = licenseRepository.read(license1.getLicenseID());
-        assertNotNull(fetchedLicense, "License should be retrieved using the given license number");
-        System.out.println(fetchedLicense);
+        License readdLicense = licenseRepository.read(license1.getLicenseID());
+        assertNotNull(readdLicense, "License should be retrieved using the given license number");
+        System.out.println(readdLicense);
     }
 
     @Test
@@ -64,7 +64,7 @@ class LicenseRepositoryTest {
     }
 
     @Test
-    @Disabled
+   // @Disabled
     @Order(4)
     void deleteLicense() {
         assertTrue(licenseRepository.delete(license1.getLicenseID()), "License should be deleted successfully");
