@@ -53,6 +53,12 @@ public class LearnersTest extends TestAppointment {
             this.test = test;
             return this;
         }
+        public LearnersTest.Builder copy(Builder builder) {
+            this.learnersTestID = builder.learnersTestID;
+            this.testScore = builder.testScore;
+            this.test = builder.test;
+            return this;
+        }
 
         public LearnersTest build() {
             return new LearnersTest(this);
