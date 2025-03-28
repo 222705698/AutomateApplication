@@ -45,12 +45,12 @@ public class UserRepository implements IUserRepository{
     public User update(User user) {
         for (int i = 0; i < UserList.size(); i++) {
             if (UserList.get(i).getIdentityNumber().equals(user.getIdentityNumber())) {
-                UserList.set(i, user); // Update the user in the list
-                return user; // Return the updated user
+                UserList.set(i, user);
+                return user;
             }
         }
         System.out.println("User not found for update");
-        return null; // Return null if user is not found for update
+        return null;
     }
 
     @Override
@@ -58,8 +58,9 @@ public class UserRepository implements IUserRepository{
         for (User user : UserList) {
             if (user.getIdentityNumber().equals(IdentityNumber)) {
                 UserList.remove(user); // Remove the user from the list
-                return true; // Return true if deletion is successful
+                return true;
             }
+
         }
         System.out.println("User not found for deletion");
         return false; // Return false if user is not found to delete

@@ -6,7 +6,7 @@ import za.ac.cput.Factory.UserFactory;
 
 
 import static org.junit.jupiter.api.Assertions.*;
-@TestMethodOrder(MethodOrderer.Random.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 
 class UserRepositoryTest { private IUserRepository userRepository;
     private static User myUser;
@@ -66,7 +66,7 @@ class UserRepositoryTest { private IUserRepository userRepository;
     }
 
     @Test
-    @Disabled
+   @Disabled
     @Order(4)
     void deleteUser() {
         assertTrue(userRepository.delete(myUser.getIdentityNumber()), "User should be deleted successfully");
